@@ -2,9 +2,10 @@
 
 ## Overview
 
-This project shows how to build a project which makes calls to a nodejs server via Restful call.  The user is able
-to enter search criteria which is sent to the server to be processed against a given set of data and the results
-are returned to the web client to be shown to the user.
+This is an example of using [Auth0](http://www.auth0.com) to secure your ReactJS application.
+
+This application makes secured calls to a nodejs server via Restful service.  The user must have a login
+on the Auth0 site.  Once logged in, the button to load data will make a call to the server and get results back to show in a table.
 
 **NOTE:** This project was created based on the [YARSK project](https://github.com/bradleyboy/yarsk#yarsk) for a starting point.
 
@@ -27,12 +28,32 @@ are returned to the web client to be shown to the user.
 * [React-Bootstrap] (https://react-bootstrap.github.io) a reactified version of the Bootstrap UI Framework.
 * [Superagent] (https://github.com/visionmedia/superagent) a simple and testable http client.
 * [React-fontawesome] (https://www.npmjs.com/package/react-fontawesome) a reactified version of the Font Awesome widgets.
-* [React-fontawesome] (https://www.npmjs.com/package/react-fontawesome) a reactified version of the Font Awesome widgets.
+* [Auth0-js] (https://www.npmjs.com/package/auth0-js) Auth0 client side javascript library.
+* [Express-jwt] (https://www.npmjs.com/package/express-jwt) Server side security on Restful Service api.
 
 ## Usage
 
 ```
 npm install
+```
+This will install all required node modules for this application
+
+## Configure Auth0
+* Create an auth0-variables.js file under the **app** directory and insert your information from Auth0 site
+```
+export const AUTH0_CLIENT_ID=;
+export const AUTH0_DOMAIN=;
+export const AUTH0_CALLBACK_URL=;
+```
+
+* Create an **.env** file under **conf** directory and insert your information from Auth0 site
+```
+AUTH0_CLIENT_ID=
+AUTH0_CLIENT_SECRET=
+```
+
+## Running in Hot Mode
+```
 npm start
 ```
 
